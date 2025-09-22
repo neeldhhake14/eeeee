@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OpenWeather Dark</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script defer src="sparkline.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>OpenWeather Dark</h1>
+    <div class="unit-toggle" id="unit-toggle">
+      <button data-unit="metric" class="active">°C</button>
+      <button data-unit="imperial">°F</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <form id="city-form">
+        <input id="city-input" class="input" placeholder="Search city (e.g., Tokyo)" required />
+        <button class="pill" type="submit">Search</button>
+        <button class="ghost" type="button" id="loc-btn">Use my location</button>
+      </form>
+      <div id="error" class="error hidden"></div>
+    </section>
+
+    <section class="current card">
+      <div class="row">
+        <div>
+          <div id="place" class="place">—</div>
+          <div id="desc" class="muted">—</div>
+        </div>
+        <div class="temp" id="temp">—</div>
+      </div>
+      <div class="meta">
+        <span id="feels">Feels like —</span>
+        <span>•</span>
+        <span id="wind">Wind —</span>
+        <span>•</span>
+        <span id="hum">Humidity —</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Next 24 hours</h2>
+      <div id="hourly-spark" class="spark"></div>
+      <div id="hourly-list" class="grid"></div>
+    </section>
+
+    <section class="card">
+      <h2>7-day forecast</h2>
+      <div id="daily-list" class="grid"></div>
+    </section>
+  </main>
+
+  <footer class="credits">
+    Weather data © OpenWeather
+  </footer>
+</body>
+</html>
